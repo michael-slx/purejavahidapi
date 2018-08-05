@@ -138,6 +138,26 @@ Or for the second example _(requires specific hardware)_:
 ./gradlew runExample2
 ```
 
+#### Using in your own project
+
+1. Add the JitPack repository to your build:
+
+```gradle
+repositories {
+	jcenter()
+	maven { url "https://jitpack.io" }
+}
+```
+
+2. Add this project as a dependency:
+
+```gradle
+dependencies {
+ 	compile 'com.github.xcuipir:purejavahidapi:0.0.11'
+}
+```
+
+3. For distribution purposes, make sure that JNA can load its native library.
 
 ### License
 
