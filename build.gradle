@@ -1,0 +1,15 @@
+plugins {
+  id 'java-library'
+  id 'maven'
+  id 'eclipse'
+}
+
+group = 'com.github.xcuipir'
+
+dependencies {
+  api 'net.java.dev.jna:jna:4.5.2'
+}
+
+repositories {
+    jcenter()
+}
