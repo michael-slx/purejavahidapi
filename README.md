@@ -3,6 +3,8 @@
 
 # Pure Java HID-API
 
+[![Release](https://jitpack.io/v/xcuipir/purejavahidapi.svg)](https://jitpack.io/#xcuipir/purejavahidapi)
+
 ### Summary
 
 PureJavaHidApi is a crossplatform  Application Programming Interface (API) for accessing USB HID devices from Java, so it is a library aimed at programmers, not end users.
@@ -42,7 +44,7 @@ PureJavaHidApi provides the capability to enumerate (find) and open attached USB
 
 ### Documentation
 
-The definitive PureJavaHidApi reference is the <a href="http://nyholku.github.io/purejavahidapi/javadoc/index.html" target="javadoc" > JavaDoc </a>.
+The definitive PureJavaHidApi reference is the <a href="https://jitpack.io/com/github/xcuipir/purejavahidapi/0.0.11/javadoc/index.html" target="javadoc" > JavaDoc </a>.
 
 ### Why HID?
 
