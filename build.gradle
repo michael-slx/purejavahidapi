@@ -1,15 +1,32 @@
 plugins {
   id 'java-library'
-  id 'maven'
+  id 'maven-publish'
   id 'eclipse'
 }
 
-group = 'com.github.xcuipir'
+group = projectGroup
+version = projectVersion
+sourceCompatibility = projectCompatibility
+
+jar {
+    manifest {
+        attributes("Implementation-Title": projectName,
+                   "Implementation-Version": projectVersion)
+    }
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}
 
 dependencies {
   api 'net.java.dev.jna:jna:4.5.2'
 }
 
 repositories {
-    jcenter()
+  jcenter()
 }
