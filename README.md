@@ -3,12 +3,14 @@
 
 # Pure Java HID-API
 
+[![Release](https://jitpack.io/v/xcuipir/purejavahidapi.svg)](https://jitpack.io/#xcuipir/purejavahidapi)
+
 ### Summary
 
 PureJavaHidApi is a crossplatform  Application Programming Interface (API) for accessing USB HID devices from Java, so it is a library aimed at programmers, not end users.
 
 
-PureJavaHidApi is written 100% in Java so it is easy for Java programmers to develop and debug and it requires no native libraries when deployed. 
+PureJavaHidApi is written 100% in Java so it is easy for Java programmers to develop and debug and it requires no native libraries when deployed.
 
 Native access to the underlaying operating system's USB device interface is provided by the wonderful JNA library which takes away all the pain of compiling and deploying native code.
 
@@ -23,7 +25,7 @@ At this stage some API breakage as the library matures towards simplicity maybe 
 ### Supported Platforms
 
 * Windows
-* Mac OS X 
+* Mac OS X
 * Linux
 
 ### Basic Functionality
@@ -36,13 +38,13 @@ PureJavaHidApi provides the capability to enumerate (find) and open attached USB
 
 * Persintent and sensical device path names for all platforms would be great!
 
-<sup>(1)</sup> 
+<sup>(1)</sup>
 <sub> there is a semi-decent parser in <a href="https://github.com/nyholku/purejavahidapi/tree/master/src/purejavahidapi/hidparser" target="hidparser"> purejavahidapi.hidparser </a> but the ability to read raw descriptor still eludes me.
 </sub>
 
 ### Documentation
 
-The definitive PureJavaHidApi reference is the <a href="http://nyholku.github.io/purejavahidapi/javadoc/index.html" target="javadoc" > JavaDoc </a>.
+The definitive PureJavaHidApi reference is the <a href="https://jitpack.io/com/github/xcuipir/purejavahidapi/0.0.11/javadoc/index.html" target="javadoc" > JavaDoc </a>.
 
 ### Why HID?
 
@@ -52,7 +54,7 @@ The answer is that you usually don't!
 
 Most HID devices (like Mouse, Keyboard etc) have specific APIs provided by the operating system and you should use those to access them.
 
-However some device which are not really Human Interface Devices in the original intent of the USB HID standard nevertheless represent themselves as HID devices. Devices like ThinkGeek  USB Rocket Launcher or  Oregon Scientific WMR100 weather stations to name two. 
+However some device which are not really Human Interface Devices in the original intent of the USB HID standard nevertheless represent themselves as HID devices. Devices like ThinkGeek  USB Rocket Launcher or  Oregon Scientific WMR100 weather stations to name two.
 
 It is specifically for accessing these types of devices that PureJavaHidApi is aimed for.
 
@@ -123,38 +125,47 @@ dev.setInputReportListener(new InputReportListener() {
 
 ### Getting Started
 
+#### Using the examples
 
-All you need to do is to place the `jna.jar` ja `purejahidapi.jar` in your class path and start coding.
-
-You'll probably do this in an IDE but here is how to compile and run one of the examples from the commands line.
-
-Check out the whole project from github and and go to the examples directory and execute this:
+Check out the whole project from github and execute this:
 
 
 ```
-java -cp ../bin/purejavahidapi.jar:../lib/jna-4.0.0.jar Example1
+./gradlew runExample1
 ```
 
-or this if you are on Windows:
+Or for the second example _(requires specific hardware)_:
 
 ```
-java -cp ..\bin\purejavahidapi.jar;..\lib\jna-4.0.0.jar Example1
+./gradlew runExample2
 ```
 
+#### Using in your own project
 
-### License 
+1. Add the JitPack repository to your build:
+
+```gradle
+repositories {
+	jcenter()
+	maven { url "https://jitpack.io" }
+}
+```
+
+2. Add this project as a dependency:
+
+```gradle
+dependencies {
+ 	compile 'com.github.xcuipir:purejavahidapi:0.0.11'
+}
+```
+
+3. For distribution purposes, make sure that JNA can load its native library.
+
+### License
 
 PureJavaHidApi is BSD licensed but please note it depends on JNA which is LGPL/ASL dual licensed.
 
 
-### Acknowledgment 
+### Acknowledgment
 
 While PureJavaHidApi is totally independent developement from the great <a href="https://github.com/signal11/hidapi" target="hidapi"> HIDAPI </a>  by <a href="http://www.signal11.us" target="signal11"> SIGNAL11 </a>  a lot of the technical and intricate knowledge needed to access HID devices were cherry picked ripe from that project which I gratefully acknowledge.
-
-
-
-
-
-
-
- 

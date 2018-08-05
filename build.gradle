@@ -15,12 +15,34 @@ jar {
     }
 }
 
+task sourcesJar(type: Jar) {
+  from sourceSets.main.allJava
+  classifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+  from javadoc
+  classifier = 'javadoc'
+}
+
 publishing {
   publications {
     mavenJava(MavenPublication) {
       from components.java
+      artifact sourcesJar
+      artifact javadocJar
     }
   }
+}
+
+task runExample1(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'purejavahidapi.example.Example1'
+}
+
+task runExample2(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'purejavahidapi.example.Example2'
 }
 
 dependencies {
