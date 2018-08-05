@@ -23,6 +23,16 @@ publishing {
   }
 }
 
+task runExample1(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'purejavahidapi.example.Example1'
+}
+
+task runExample2(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'purejavahidapi.example.Example2'
+}
+
 dependencies {
   api 'net.java.dev.jna:jna:4.5.2'
 }
